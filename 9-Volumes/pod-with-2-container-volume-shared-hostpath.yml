@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-with-2-container-volume-shared-hostpath
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx
+      volumeMounts:
+      - name: shared-data
+        mountPath: /data-in-nginx-container
+    - name: tomcat-container
+      image: tomcat:alpine
+      volumeMounts:
+      - name: shared-data
+        mountPath: /data-in-tomcat-container
+  volumes:
+    - name: shared-data
+      hostPath:
+        path: /home/kubernetes/shared-folder

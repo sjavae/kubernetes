@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-with-1-container-update
+  labels:
+    department: engineering
+spec:
+  replicas: 2
+  minReadySeconds: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app: frontend-update-rollback
+  template:
+    metadata:
+      labels:
+        app: frontend-update-rollback
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.17.4-alpine
+        ports:
+        - containerPort: 80 

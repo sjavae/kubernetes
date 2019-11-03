@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod-inside-namespace
+  namespace: my-first-namespace
+spec:
+  containers:
+  - name: nginx-my-pod-inside-namespace
+    image: nginx:latest
+    ports:
+    - containerPort: 80

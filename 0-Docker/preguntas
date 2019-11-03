@@ -1,0 +1,12 @@
+1. Crear una imagen de un servidor nodejs que utilice el puerto 8004.
+La imagen usará el nombre "my-image" y la versión del tag será v1.0.0-alpine.
+La aplicación de nodejs debe estar en el directorio Home de la imagen.
+
+2. Ejecutar un contenedor en segundo plano con el nombre "my-container" que ejecute la imagen "my-image" creada, que utilice el puerto 3000 del ordenador y que comparta 
+el directorio Home en un volumen.
+
+3- Crear un nuevo contenedor, en segundo plano, con el nombre "my-container-clon" que comparta el mismo volumen que "my-container" en el puerto 3001. 
+
+4- Modificar en "my-container" el archivo /home/server.js con el mensaje "It's done!". Una vez modificado mirar el mensaje del servidor del contenedor "my-container-clon".
+¿Qué mensaje aparece? ¿Por qué?
+

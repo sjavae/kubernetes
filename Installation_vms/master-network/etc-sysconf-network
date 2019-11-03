@@ -1,0 +1,3 @@
+# Created by anaconda
+ GATEWAY=192.168.1.1
+ GATEWAYDEV=enp0s3

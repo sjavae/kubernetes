@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-with-1-container-volume-hostpath
+spec:
+  containers:
+    - name: nginx
+      image: nginx:latest
+      volumeMounts:
+      - mountPath: /my-custom-path-inside-container
+        name: volume-hostpath
+  volumes:
+  - name: volume-hostpath
+    hostPath:
+      path: /home/kubernetes

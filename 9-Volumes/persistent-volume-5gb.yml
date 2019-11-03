@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: volume-5gb
+spec:
+  capacity:
+    storage: 5Gi
+  volumeMode: Filesystem
+  accessModes:
+  - ReadWriteMany
+  persistentVolumeReclaimPolicy: Recycle
+  storageClassName: local-storage
+  local:
+    path: /home/kubernetes/disk1
+  nodeAffinity:
+    required:
+    nodeSelectorTerms:
+    - matchExpressions:
+      - key: kubernetes.io/hostname
+        operator: In
+        values:
+        - kubeminion1

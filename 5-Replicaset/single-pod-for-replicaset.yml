@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: single-pod-for-replicaset
+  labels:
+    app: frontend
+spec:
+  containers:
+  - name: nginx-container
+    image: nginx
+    ports:
+    - containerPort: 80

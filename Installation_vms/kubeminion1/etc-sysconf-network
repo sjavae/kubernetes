@@ -1,0 +1,3 @@
+# Created by anaconda
+ GATEWAY=192.168.15.1
+ GATEWAYDEV=eth0

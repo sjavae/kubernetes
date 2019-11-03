@@ -1,0 +1,49 @@
+dhclient 
+lshw -class network | grep -B 2 serial
+/etc/sysconfig/network-script/
+HWADDR=
+/etc/sysconfig/network
+GATEWAY=192.168.1.1
+GATEWAYDEV=enp0s3
+
+/etc/init.d/network restart
+
+00:00:27:1b:78:66
+
+## network-script configuration
+
+/etc/sysconfig/network-script/ifcfgfile
+
+TYPE="Ethernet"
+PROXY_METHOD="none"
+BROWSER_ONLY="no"
+BOOTPROTO="none"
+DEFROUTE="yes"
+IPV4_FAILURE_FATAL="no"
+IPV6INIT="yes"
+IPV6_AUTOCONF="yes"
+IPV6_DEFROUTE="yes"
+IPV6_FAILURE_FATAL="no"
+IPV6_ADDR_GEN_MODE="stable-privacy"
+NAME="enp0s8"
+# UUID="9be44316-25ca-4f5f-bda5-599762dceee7"
+DEVICE="enp0s8"
+ONBOOT="yes"
+
+# Server IP #
+IPADDR=192.168.58.100
+# Subnet #
+PREFIX=24
+# Set default gateway IP #
+GATEWAY=192.168.58.1
+# Set dns servers #
+DNS1=8.8.8.8
+DNS2=8.8.4.4
+DEFROUTE=yes
+
+NAME=enp0s8
+# This is system specific and can be created using 'uuidgen eth0' command #
+# UUID=41171a6f-bce1-44de-8a6e-cf5e782f8bd6
+DEVICE=enp0s8
+ONBOOT=yes
+

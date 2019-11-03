@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-with-2-container-volume-emptydir
+spec:
+  volumes:
+  - name: shared-empty-dir-data
+    emptyDir: {}
+  containers:
+  - name: nginx-container
+    image: nginx:latest
+    volumeMounts:
+    - name: shared-empty-dir-data
+      mountPath: /var/www/html
+  - name: tomcat-container
+    image: tomcat:alpine
+    volumeMounts:
+    - name: shared-empty-dir-data
+      mountPath: /data-in-tomcat-container
